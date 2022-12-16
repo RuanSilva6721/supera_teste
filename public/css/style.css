@@ -1,8 +1,9 @@
+body{
+    color: #A9A9A9;
+}
 footer{
     text-align: center;
-    background-color: #353535;
-    color: #fff;
-    padding: 30px;
+    padding: 10px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -10,3 +11,4 @@ footer{
 footer p{
     margin-bottom: 0;
 }
+
