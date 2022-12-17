@@ -6,6 +6,8 @@
         <th class="text-center">Modelo</th>
         <th class="text-center">Marca</th>
         <th class="text-center">Versão</th>
+        <th class="text-center">Itens do Carro</th>
+        <th class="text-center">Adicionar Manutenção</th>
         <th class="text-center">Editar</th>
         <th class="text-center">Deletar</th>
     </tr>

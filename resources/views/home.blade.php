@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card ">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -14,7 +14,7 @@
                         </div>
                     @endif
                 </div>
-            <div class="offset-md-3">                
+            <div class="text-center">                
                 <div class="col-md-12   dashboard-title-container">
                     <h1>Listar de Carros</h1>
                 </div>
