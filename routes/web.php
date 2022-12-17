@@ -22,4 +22,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/car/create/', [CarController::class, 'create'])->name('car.create');
-Route::put('/car/store/', [CarController::class, 'store'])->name('car.store');
+Route::post('/car/store/', [CarController::class, 'store'])->name('car.store');
+Route::get('/car/edit/{id}', [CarController::class, 'edit'])->name('car.edit');
+Route::put('/car/update/{id}', [CarController::class, 'update'])->name('car.update');
+Route::delete('/car/destroy/{id}', [CarController::class, 'destroy'])->name('car.destroy');
+

@@ -2,41 +2,28 @@
     <td class="text-center">{{$car->modelCar}}</td>
     <td class="text-center">{{ $car->brandCar }}</td>
     <td class="text-center">{{$car->version}}</td>
-    {{-- <td class="text-center">
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <ul>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            <li class="dropdown-item"><p>sosahusahiouahjkhasdoa</p></li>
-            
-            
-        </ul>
-        </div>
-      </div>
-    </td> --}}
-    <td class="text-center"><a href="#" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a></td>
-    {{-- {{ route('car.edit', $event->id) }} /car/delete{{$event->id}}--}}
-    <td class="text-center"><form action="#" method="POST">
+    <td class="text-center"><a href="{{ route('car.edit', $car->id) }}" class="btn edit-btn" id="btnEdit"><i class="fa-solid fa-pen-to-square"></i></a></td>
+    <td class="text-center"><form action="{{ route('car.destroy', $car->id) }}" method="POST">
         @csrf
         @method('DELETE')
 
-        <button type="submit" class="btn btn-danger delete-btn"> <ion-icons name="trash-outline"></ion-icons> Deletar</button>
-
-
+        <button type="submit" class="btn delete-btn bg-danger">  <i class="fa-solid fa-trash "></i></button>
     </form></td>
-    <td class="text-center">
-
-    </td>
-
     </tr>
+
+    <td class="text-center">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <p class="dropdown-item">{{$car->description}}</p>
+                <p class="dropdown-item">{{$car->description}}</p>
+                <p class="dropdown-item">{{$car->description}}</p>
+                <p class="dropdown-item">{{$car->description}}</p>
+
+            </div>
+          </div>
+        </td>
 
 

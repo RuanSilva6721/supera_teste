@@ -5,7 +5,7 @@
     <tr>
         <th class="text-center">Modelo</th>
         <th class="text-center">Marca</th>
-        <th class="text-center">Manutenções</th>
+        <th class="text-center">Versão</th>
         <th class="text-center">Editar</th>
         <th class="text-center">Deletar</th>
     </tr>

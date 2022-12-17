@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
@@ -40,28 +41,28 @@ class CarController extends Controller
 
         return redirect()->route('home');
     }
-
-    public function show()
+    public function edit($id)
     {
-    
+        $car = Car::findOrFail($id);
+        return view('cars.edit', ['car' => $car]);
+        
+    }
+
+
+    public function update(Request $request)
+    {
        
+        $data = $request->all();
+        Car::findOrFail($request->id)->update($data);
+        
+        return redirect()->route('home');
     }
 
 
-    public function edit(Car $car)
+    public function destroy($id)
     {
-
-    }
-
-
-    public function update(Request $request, Car $car)
-    {
-
-    }
-
-
-    public function destroy(Car $car)
-    {
+        Car::findOrFail($id)->delete();
+        return redirect()->route('home');
 
     }
 }
