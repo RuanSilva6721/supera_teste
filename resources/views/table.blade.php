@@ -1,6 +1,6 @@
 <hr />
 <div style="overflow-x:auto;">
-<table id="tab-principal" class="table-responsive table table-bordered table-striped " >
+<table id="tab-principal" class="table-responsive table table-bordered table-striped" >
     <thead>
     <tr>
         <th class="text-center">Modelo</th>
@@ -12,25 +12,24 @@
     </thead>
     <tbody data-conteudo-tabela class='results'>
 
-    {{-- @if( (isset($sessoes)) AND (count($sessoes) > 0) )
-        @foreach($sessoes['content'] as $sessao)
+     @if( (isset($cars)) AND ($cars->count()) > 0) 
+        @foreach($cars as $car) 
 
-
-
-        @include('linha')
+        @include('line')
 
 
 
         @endforeach
-    @endif --}}
+    @endif
     </tbody>
 </table>
 
-</div>
+{{-- </div>
 
-{{-- <div class="col-md-10 offset-md-1 dashboard-events-container">
-
-    @if(count($events) > 0)
+<div class=" table-responsive table table-bordered table-striped col-md-10 offset-md-1 dashboard-events-container">
+@php
+//dd($cars);
+@endphp
         <table class="table">
             <thead>
                 <tr>
@@ -41,14 +40,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($events as $event)
+                {{-- @foreach($cars as $event)
                     <tr>
                         <th scope="row"> {{$loop->index + 1}}</th>
-                        <td><a href="/events/{{$event->id}}">{{$event->title}}</a></td>
+                        <td><a href="/cars/{{$event->id}}">{{$event->title}}</a></td>
                         <td>{{count($event->users)}}</td>
                         <td>
-                            <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a>
-                            <form action="/events/{{$event->id}}" method="POST">
+                            <a href="/cars/edit/{{$event->id}}" class="btn btn-info edit-btn"> <ion-icons name="create-ouyline"></ion-icons> Editar</a>
+                            <form action="/cars/{{$car->id}}" method="POST">
                                 @csrf
                                 @method('DELETE')
 
@@ -59,11 +58,11 @@
                         </td>
                     </tr>
 
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <p>Você ainda não possui carros cadastros, <a href="{{ route('car.create') }}">adiconar carros</a></p>
-    @endif
+                @endforeach --}}
+            {{-- </tbody>
+        </table> --}}
+  
+        {{-- <p>Você ainda não possui carros cadastros, <a href="{{ route('car.create') }}">adiconar carros</a></p>
+     --}}
 
-</div> --}}
+</div> 

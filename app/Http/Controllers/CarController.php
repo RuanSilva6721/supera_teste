@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -18,8 +19,6 @@ class CarController extends Controller
 
     public function create()
     {
-        $user = auth()->user();
-        dd($user->name);
         return view('cars.create');
     }
 
@@ -28,38 +27,24 @@ class CarController extends Controller
     {
    
         $car = new Car;
+        $user = auth()->user();
 
         $car->modelCar = $request->modelCar;
         $car->brandCar = $request->brandCar;
         $car->version = $request->version;
         $car->description = $request->description;
         $car->items = $request->items;
+        $car->user_id = $user->id;
 
         $car->save();
 
         return redirect()->route('home');
     }
 
-    public function show(Car $car)
+    public function show()
     {
-        $car = Car::findOrFail($id);
-
-        $user = auth()->user();
-        $hasUserJoined = false;
-
-        if($user){
-            $usercars = $user->carsAsParticipant->toArray();
-
-            foreach($usercars as $usercar){
-                if($usercar['id']== $id){
-                    $hasUserJoined = True;
-                }
-            }
-        }
-
-        $carOwner = User::where('id', $car->user_id)->first()->toArray();
-
-        return view('cars.show', ['car' => $car, 'carOwner' => $carOwner, "hasUserJoined" => $hasUserJoined]);
+    
+       
     }
 
 
