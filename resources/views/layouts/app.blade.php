@@ -8,7 +8,9 @@
             @yield('content')
         </main>
     </div>
-    @include('layouts.footer')
 
+    
+    @include('layouts.footer')
+    
 </body>
 </html>

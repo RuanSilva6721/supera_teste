@@ -22,3 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/car/create/', [CarController::class, 'create'])->name('car.create');
+Route::put('/car/store/', [CarController::class, 'create'])->name('car.store');

@@ -11,4 +11,6 @@ footer{
 footer p{
     margin-bottom: 0;
 }
-
+#app{
+    margin-bottom: 30px;
+}

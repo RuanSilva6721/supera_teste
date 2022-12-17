@@ -1,56 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Crie um evento</h1>
-<div id="event-create-container" class="col-md-6 offset-md-3">
-    <form action="/events" method="POST" enctype="multipart/form-data">
+<div class="col-md-6 offset-md-3">
+    <h1>Adicionar Carro</h1>
+    <form action="{{ route('car.store') }}}}" method="POST" enctype="multipart/form-data">
         @csrf
+        @Method('PUT')
     <div class="form-group">
-        <label for="title">Evento</label>
-        <input type="text" class="form-control" id="title" name="title" placeholder="Nome do evento">
+        <label for="modelCar">Modelo</label>
+        <input type="text" class="form-control" id="modelCar" name="modelCar" placeholder="Modelo do Carro">
     </div>
     <div class="form-group">
-        <label for="date">Data do Evento</label>
-        <input type="date" class="form-control" id="date" name="date">
-    </div>
-    <div class="form-group">
-        <label for="image">Imagem do Evento: </label>
+        <label for="image">Imagem do do carro: </label>
         <input type="file" name="image" id="image" class="foorm-control-file">
     </div>
     <div class="form-group">
-        <label for="city">Cidade</label>
-        <input type="text" class="form-control" id="city" name="city" placeholder="Local do Evento">
+        <label for="brandCar">Marca</label>
+        <input type="text" class="form-control" id="brandCar" name="brandCar" placeholder="Marca do Carro">
     </div>
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="private">O evento é privado?</label>
         <select name="private" id="private" class="form-control">
             <option value="0">Não</option>
             <option value="1">Sim</option>
         </select>
-    </div>
+    </div> --}}
     <div class="form-group">
         <label for="description">descrição</label>
-        <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no evento" rows="10"></textarea>
+        <textarea name="description" id="description" class="form-control" placeholder="Descrição do carro" rows="10"></textarea>
     </div>
     <div class="form-group">
-        <label for="title">Adicione itens de infraestrutura</label>
+        <label for="title">Adicione itens ao carro</label>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Cadeiras"> Cadeiras
+            <input type="checkbox" name="items[]" value="windows_locks"> Vidros e travas elétricas
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Palco"> Palco
+            <input type="checkbox" name="items[]" value="Air_conditioner"> Ar-condicionado
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Cerveja"> Cerveja
+            <input type="checkbox" name="items[]" value="leather_seats"> Bancos de couro
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="food"> food
+            <input type="checkbox" name="items[]" value="Painting"> Pintura
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Banheiros"> Banheiros
+            <input type="checkbox" name="items[]" value="mirrors"> Pacote de espelhos
         </div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Criar Evento">
+    <input type="submit" class="btn btn-primary" value="Adicionar Carro">
     </form>
 </div>
 @endsection
