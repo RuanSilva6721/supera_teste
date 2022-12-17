@@ -3,28 +3,21 @@
 @section('content')
 <div class="col-md-6 offset-md-3">
     <h1>Adicionar Carro</h1>
-    <form action="{{ route('car.store') }}}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('car.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @Method('PUT')
     <div class="form-group">
         <label for="modelCar">Modelo</label>
-        <input type="text" class="form-control" id="modelCar" name="modelCar" placeholder="Modelo do Carro">
-    </div>
-    <div class="form-group">
-        <label for="image">Imagem do do carro: </label>
-        <input type="file" name="image" id="image" class="foorm-control-file">
+        <input type="text" class="form-control" id="modelCar" name="modelCar" placeholder="Modelo do Carro" required>
     </div>
     <div class="form-group">
         <label for="brandCar">Marca</label>
-        <input type="text" class="form-control" id="brandCar" name="brandCar" placeholder="Marca do Carro">
+        <input type="text" class="form-control" id="brandCar" name="brandCar" placeholder="Marca do Carro" required>
     </div>
-    {{-- <div class="form-group">
-        <label for="private">O evento é privado?</label>
-        <select name="private" id="private" class="form-control">
-            <option value="0">Não</option>
-            <option value="1">Sim</option>
-        </select>
-    </div> --}}
+    <div class="form-group">
+        <label for="version">Versão</label>
+        <input type="number" class="form-control" id="version" name="version" placeholder="Versão do Carro" required>
+    </div>
     <div class="form-group">
         <label for="description">descrição</label>
         <textarea name="description" id="description" class="form-control" placeholder="Descrição do carro" rows="10"></textarea>

@@ -7,19 +7,26 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        
+
     }
 
     public function create()
     {
+        $user = auth()->user();
+        dd($user->name);
         return view('cars.create');
     }
 
 
     public function store(Request $request)
     {
+   
         $car = new Car;
 
         $car->modelCar = $request->modelCar;
@@ -28,26 +35,9 @@ class CarController extends Controller
         $car->description = $request->description;
         $car->items = $request->items;
 
-        //image upload
-        if($request->hasfile('image') && $request->file('image')->isValid()){
-            $requestImage = $request->image;
-
-            $extension = $requestImage->extension();
-
-            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now') . "." . $extension);
-
-            $requestImage->move(public_path('img/cars'), $imageName);
-
-            $car->image = $imageName;
-
-        }
-
-        $user = auth()->user();
-        $car->user_id = $user->id;
-
         $car->save();
 
-        return redirect('/')->with('msg', 'caro criando com sucesso!');
+        return redirect()->route('home');
     }
 
     public function show(Car $car)
@@ -75,18 +65,18 @@ class CarController extends Controller
 
     public function edit(Car $car)
     {
-        
+
     }
 
 
     public function update(Request $request, Car $car)
     {
-        
+
     }
 
 
     public function destroy(Car $car)
     {
-        
+
     }
 }

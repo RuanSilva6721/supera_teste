@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-secondary shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm" id="menu">
     <div class="container">
         <a class="navbar-brand " href="{{ url('/') }}">
             RuanCar

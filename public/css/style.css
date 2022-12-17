@@ -1,7 +1,8 @@
 body{
-    color: #A9A9A9;
+    color: #7A5656;
 }
 footer{
+    background-color: #C7C7C7;
     text-align: center;
     padding: 10px;
     position: relative;
@@ -13,4 +14,10 @@ footer p{
 }
 #app{
     margin-bottom: 30px;
+}
+#menu{
+    background-color: #C7C7C7;
+}
+.text-center{
+    color: #7A5656;
 }

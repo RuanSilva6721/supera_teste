@@ -16,7 +16,7 @@
                 </div>
                     
 <div class="col-md-12 offset-md-1 dashboard-title-container">
-    <h1>Meus eventos</h1>
+    <h1>Listar de Carros</h1>
 </div>
                 @include('table')
 
