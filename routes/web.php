@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\CarMaintenanceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +21,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//cars
 Route::get('/car/create/', [CarController::class, 'create'])->name('car.create');
 Route::post('/car/store/', [CarController::class, 'store'])->name('car.store');
 Route::get('/car/edit/{id}', [CarController::class, 'edit'])->name('car.edit');
 Route::put('/car/update/{id}', [CarController::class, 'update'])->name('car.update');
 Route::delete('/car/destroy/{id}', [CarController::class, 'destroy'])->name('car.destroy');
 
+
+//carMaintenance
+Route::get('/carMaintenance/create/{id}', [CarMaintenanceController::class, 'create'])->name('carMaintenance.create');
+Route::post('/carMaintenance/store/', [CarMaintenanceController::class, 'store'])->name('carMaintenance.store');

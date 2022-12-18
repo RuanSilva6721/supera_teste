@@ -14,8 +14,8 @@
     </thead>
     <tbody data-conteudo-tabela class='results'>
 
-     @if( (isset($cars)) AND ($cars->count()) > 0) 
-        @foreach($cars as $car) 
+     @if( (isset($cars)) AND ($cars->count()) > 0)
+        @foreach($cars as $car)
 
         @include('line')
 
@@ -63,8 +63,8 @@
                 @endforeach --}}
             {{-- </tbody>
         </table> --}}
-  
+
         {{-- <p>Você ainda não possui carros cadastros, <a href="{{ route('car.create') }}">adiconar carros</a></p>
      --}}
 
-</div> 
+</div>

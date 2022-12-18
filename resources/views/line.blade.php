@@ -16,15 +16,21 @@
             </div>
           </div>
         </td>
-    <td class="text-center"><a href="#" class="btn edit-btn" ><i class="fa-solid fa-gear"></i></a></td>    
+        
+    <td class="text-center"><a href="{{ route('carMaintenance.create', $car->id)}}" class="btn edit-btn" ><i class="fa-solid fa-gear"></i></a></td>
     <td class="text-center"><a href="{{ route('car.edit', $car->id) }}" class="btn edit-btn" ><i class="fa-solid fa-pen-to-square"></i></a></td>
     <td class="text-center"><form action="{{ route('car.destroy', $car->id) }}" method="POST">
         @csrf
         @method('DELETE')
 
         <button type="submit" class="btn delete-btn bg-danger">  <i class="fa-solid fa-trash "></i></button>
-    </form></td>
-    </tr>
+    </form>
+    </td>
+
+
+</tr>
+
+
 
 
 

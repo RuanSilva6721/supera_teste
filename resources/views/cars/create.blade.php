@@ -24,19 +24,19 @@
     <div class="form-group">
         <label for="title">Adicione itens ao carro</label>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="windows_locks"> Vidros e travas elétricas
+            <input type="checkbox" name="items[]" value="Vidros e travas elétricas"> Vidros e travas elétricas
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Air_conditioner"> Ar-condicionado
+            <input type="checkbox" name="items[]" value="Ar-condicionado"> Ar-condicionado
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="leather_seats"> Bancos de couro
+            <input type="checkbox" name="items[]" value="Bancos de couro"> Bancos de couro
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="Painting"> Pintura
+            <input type="checkbox" name="items[]" value="Pintura"> Pintura
         </div>
         <div class="form-group">
-            <input type="checkbox" name="items[]" value="mirrors"> Pacote de espelhos
+            <input type="checkbox" name="items[]" value="Pacote de espelhos"> Pacote de espelhos
         </div>
     </div>
     <input type="submit" class="btn btn-primary" value="Adicionar Carro">
