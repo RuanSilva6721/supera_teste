@@ -18,8 +18,19 @@ class CarMaintenanceController extends Controller
         return view('carMaintenance.create', ['id' => $id]);
 
     }
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        $carMaintenance = new CarMaintenance;
+
+        dd($request->date);
+        $carMaintenance->modelCar = $request->maintenance;
+        $carMaintenance->date = $request->date;
+        $carMaintenance->car_id = $id;
+
+        $carMaintenance->save();
+
+        return redirect()->route('home');
+
 
     }
 

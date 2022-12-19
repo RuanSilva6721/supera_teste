@@ -11,7 +11,7 @@ class Car extends Model
 {
     use HasFactory;
     protected $table = "cars";
-    protected $fillable = ["modelCar","brandCar","version", "description", "image", "items"];
+    protected $fillable = ["modelCar","brandCar","version", "description", "image", "items", "user_id"];
     protected $casts =[
         'items' => 'array'
     ];

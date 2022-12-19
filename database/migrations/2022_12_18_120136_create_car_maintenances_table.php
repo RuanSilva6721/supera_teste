@@ -15,6 +15,10 @@ class CreateCarMaintenancesTable extends Migration
     {
         Schema::create('car_maintenances', function (Blueprint $table) {
             $table->id();
+            $table->string('maintenance');
+            $table->dateTime('date');
+            $table->unsignedBigInteger('car_id');
+            $table->foreign('car_id')->references('id')->on('cars');
             $table->timestamps();
         });
     }
