@@ -18,7 +18,7 @@ class CreateCarMaintenancesTable extends Migration
             $table->string('maintenance');
             $table->dateTime('date');
             $table->unsignedBigInteger('car_id');
-            $table->foreign('car_id')->references('id')->on('cars');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,7 @@ class CreateCarMaintenancesTable extends Migration
      */
     public function down()
     {
+
         Schema::dropIfExists('car_maintenances');
     }
 }

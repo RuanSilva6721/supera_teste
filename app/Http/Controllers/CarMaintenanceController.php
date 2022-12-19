@@ -22,8 +22,7 @@ class CarMaintenanceController extends Controller
     {
         $carMaintenance = new CarMaintenance;
 
-        dd($request->date);
-        $carMaintenance->modelCar = $request->maintenance;
+        $carMaintenance->maintenance = $request->maintenance;
         $carMaintenance->date = $request->date;
         $carMaintenance->car_id = $id;
 
