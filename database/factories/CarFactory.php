@@ -4,25 +4,23 @@ namespace Database\Factories;
 
 use App\Models\Car;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Provider\Fakecar;
 
 class CarFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
+
     protected $model = Car::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
+
     public function definition()
     {
+        $this->faker->addProvider(new Fakecar($this->faker));
+        $vehicle = $this->faker->vehicleArray();
         return [
-            //
+           'modelCar' => $this->faker->vehicle,
+           'brandCar' => $this->faker->vehicleBrand,
+           'version' => rand(1,12),
+            'description' => $this->faker->name,           'user_id' => rand(1,100),
         ];
     }
 }

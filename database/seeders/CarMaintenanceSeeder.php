@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\CarMaintenance;
 use Illuminate\Database\Seeder;
 
 class CarMaintenanceSeeder extends Seeder
@@ -13,6 +13,6 @@ class CarMaintenanceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        CarMaintenance::factory(100)->create();
     }
 }

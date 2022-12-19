@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\CarMaintenance;
 use Illuminate\Database\Eloquent\Factories\Factory;
-
 class CarMaintenanceFactory extends Factory
 {
     /**
@@ -22,7 +21,9 @@ class CarMaintenanceFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'maintenance' => 'trocar a roda',
+            'date' => $this->fake->date('Y-m-d'),
+            'car_id' => rand(1,100),
         ];
     }
 }

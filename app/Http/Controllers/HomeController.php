@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $cars = $user->car()->get();;
+        $cars = $user->car()->paginate(5);;
 
         return view('home', ['cars' => $cars]);
     }

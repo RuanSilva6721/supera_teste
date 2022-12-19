@@ -9,9 +9,11 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <ul id="items-list">
+                    @if ($car->items >0)
                     @foreach($car->items as $item)
                     <li class="dropdown-item"><i class="fa-solid fa-car"></i> <span>{{$item}}</span>  </li>
                     @endforeach
+                    @endif
                 </ul>
             </div>
           </div>
