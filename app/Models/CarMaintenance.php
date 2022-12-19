@@ -11,4 +11,9 @@ class CarMaintenance extends Model
     protected $fillable = ["maintenance","date", "car_id"];
 
     use HasFactory;
+
+    public function car()
+    {
+        return $this->belongsTo(Car::class);
+    }
 }

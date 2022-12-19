@@ -13,7 +13,7 @@
         <label for="date">Data da Manutenção</label>
         <input type="date" class="form-control" id="date" name="date" required>
     </div>
-    <input type="submit" class="btn btn-primary" value="Adicionar Carro">
+    <input type="submit" class="btn btn-primary" value="Adicionar Manutenção">
     </form>
 </div>
 @endsection

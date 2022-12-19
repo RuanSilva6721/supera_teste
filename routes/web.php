@@ -35,3 +35,6 @@ Route::delete('/car/destroy/{id}', [CarController::class, 'destroy'])->name('car
 //carMaintenance
 Route::get('/carMaintenance/create/{id}', [CarMaintenanceController::class, 'create'])->name('carMaintenance.create');
 Route::post('/carMaintenance/store/{id}', [CarMaintenanceController::class, 'store'])->name('carMaintenance.store');
+Route::get('/carMaintenance/edit/{id}', [CarMaintenanceController::class, 'edit'])->name('carMaintenance.edit');
+Route::put('/carMaintenance/update/{id}', [CarMaintenanceController::class, 'update'])->name('carMaintenance.update');
+Route::delete('/carMaintenance/destroy/{id}', [CarMaintenanceController::class, 'destroy'])->name('carMaintenance.destroy');

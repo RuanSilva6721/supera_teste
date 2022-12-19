@@ -37,17 +37,26 @@ class CarMaintenanceController extends Controller
     {
 
     }
-    public function edit(CarMaintenance $carMaintenance)
+    public function edit($id)
     {
+        $carMaintenance = CarMaintenance::findOrFail($id);
+        return view('carMaintenance.edit', ['carMaintenance' => $carMaintenance]);
 
     }
-    public function update(Request $request, CarMaintenance $carMaintenance)
+    public function update(Request $request)
     {
+        $data = $request->all();
+        CarMaintenance::findOrFail($request->id)->update($data);
+
+        return redirect()->route('home');
 
     }
 
-    public function destroy(CarMaintenance $carMaintenance)
+    public function destroy($id)
     {
+        CarMaintenance::findOrFail($id)->delete();
+        return redirect()->route('home');
+
 
     }
 }

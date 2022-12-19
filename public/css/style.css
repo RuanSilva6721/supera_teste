@@ -24,3 +24,11 @@ footer p{
 #btnEdit{
     background-color: #C7C7C7;
 }
+.abc{
+    background-color:  #FFFFFF !important;
+    font-size:12px;
+}
+#carLine{
+    font-weight: bold;
+    color: green !important;
+}
