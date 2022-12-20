@@ -22,7 +22,7 @@ class CarMaintenanceFactory extends Factory
     {
         return [
             'maintenance' => 'trocar a roda',
-            'date' => $this->fake->date('Y-m-d'),
+            'date' => $this->faker->date('Y-m-d'),
             'car_id' => rand(1,100),
         ];
     }

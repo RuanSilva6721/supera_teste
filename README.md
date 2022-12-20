@@ -36,7 +36,13 @@ php artisan migrate
 Caso queira dados fictícios no banco, utilize o comando:
 
 ```bash
+pacote
+composer require pelmered/fake-car --dev
+
+
+php artisan db:seed --class=DatabaseSeeder
 php artisan db:seed --class=CarSeeder
+php artisan db:seed --class=CarMaintenanceSeeder
 ```
 
 Por fim, inicie o servidor da aplicação com o comando:

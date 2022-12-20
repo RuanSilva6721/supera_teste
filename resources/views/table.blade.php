@@ -24,9 +24,9 @@
     </tbody>
 
 </table>
-<div class="py-4">
-    {{ $cars->links() }}
-</div>
+<br>
+    {{ $cars->onEachSide(5)->links() }}
+<br>
 
 @else
     <p>Você ainda não possui carros cadastrados, <a href="{{ route('car.create') }}">adicionar carros</a></p>

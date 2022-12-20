@@ -20,7 +20,8 @@ class CarFactory extends Factory
            'modelCar' => $this->faker->vehicle,
            'brandCar' => $this->faker->vehicleBrand,
            'version' => rand(1,12),
-            'description' => $this->faker->name,           'user_id' => rand(1,100),
+            'description' => $this->faker->name,
+           'user_id' => rand(1,100),
         ];
     }
 }

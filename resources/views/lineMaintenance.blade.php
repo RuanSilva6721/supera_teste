@@ -18,7 +18,7 @@
               <td>{{ $carMaintenance->maintenance }}</td>
               <td>{{date('d/m/Y', strtotime($carMaintenance->date))  }}</td>
               <td class="text-center"><a href="{{ route('carMaintenance.edit', $carMaintenance->id) }}" class="btn edit-btn" ><i class="fa-solid fa-pen-to-square"></i></a></td>
-              <td class="text-center"><form action="{{ route('carMaintenance.destroy', $car->id) }}" method="POST">
+              <td class="text-center"><form action="{{ route('carMaintenance.destroy', $carMaintenance->id) }}" method="POST">
                   @csrf
                   @method('DELETE')
 
