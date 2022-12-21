@@ -57,7 +57,14 @@ Para ver o projeto em execução acesse seu [http://localhost:8000](http://local
 **Caso queira rodar em docker , utilize o comando:**
 
 ```bash
+##baixe o laradock no projeto usando o comando
+git clone https://github.com/Laradock/laradock.git
+
+duplique o arquivo do laradock `.env.example` e renomei um deles para `.env`.
+
+colocar o conteúdo do `supera_teste\meu_env_para_laardock\env.txt` no `.env` do laradock
 ##Inicie o docker em sua máquina e depois:
+
 cd laradock
 docker-compose up -d nginx mysql phpmyadmin
 
