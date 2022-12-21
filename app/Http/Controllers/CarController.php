@@ -26,7 +26,7 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
-   
+
         $car = new Car;
         $user = auth()->user();
 
@@ -39,30 +39,30 @@ class CarController extends Controller
 
         $car->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', 'Carro adicionado com sucesso!');
     }
     public function edit($id)
     {
         $car = Car::findOrFail($id);
         return view('cars.edit', ['car' => $car]);
-        
+
     }
 
 
     public function update(Request $request)
     {
-       
+
         $data = $request->all();
         Car::findOrFail($request->id)->update($data);
-        
-        return redirect()->route('home');
+
+        return redirect()->route('home')->with('msg', 'Carro atualizado com sucesso!');
     }
 
 
     public function destroy($id)
     {
         Car::findOrFail($id)->delete();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', 'Carro deletado com sucesso!');
 
     }
 }

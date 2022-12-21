@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CarMaintenanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
 
@@ -28,7 +32,7 @@ class CarMaintenanceController extends Controller
 
         $carMaintenance->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', 'Manutenção do carro adicionado com sucesso!');
 
 
     }
@@ -48,14 +52,14 @@ class CarMaintenanceController extends Controller
         $data = $request->all();
         CarMaintenance::findOrFail($request->id)->update($data);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', 'Manutenção do carro atualizada com sucesso!');
 
     }
 
     public function destroy($id)
     {
         CarMaintenance::findOrFail($id)->delete();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('msg', 'Manutenção do carro deletada com sucesso!');
 
 
     }

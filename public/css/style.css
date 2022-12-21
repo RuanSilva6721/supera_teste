@@ -32,3 +32,6 @@ footer p{
     font-weight: bold;
     color: green !important;
 }
+.msg{
+ text-align: center;
+}
