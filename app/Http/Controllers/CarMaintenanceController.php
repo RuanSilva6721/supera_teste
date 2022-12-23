@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\CarMaintenance;
+use App\Services\CarMaintenanceService;
 use Illuminate\Http\Request;
+use PHPUnit\Exception;
 
 class CarMaintenanceController extends Controller
 {
@@ -22,45 +24,48 @@ class CarMaintenanceController extends Controller
         return view('carMaintenance.create', ['id' => $id]);
 
     }
-    public function store(Request $request, $id)
+    public function store(Request $request, $id, CarMaintenanceService $carMaintenanceService)
     {
-        $carMaintenance = new CarMaintenance;
+        try {
+            $carMaintenanceService->store($request, $id);
+            return redirect()->route('home')->with('msg', 'Manutenção do carro adicionado com sucesso!');
 
-        $carMaintenance->maintenance = $request->maintenance;
-        $carMaintenance->date = $request->date;
-        $carMaintenance->car_id = $id;
-
-        $carMaintenance->save();
-
-        return redirect()->route('home')->with('msg', 'Manutenção do carro adicionado com sucesso!');
-
+        } catch (Exception $e) {
+            return redirect()->route('home')->with('msg2', 'Falha ao tentar adiconar a Manutenção do carro!');
+        }
 
     }
 
-    public function show(CarMaintenance $carMaintenance)
+    public function edit($id, CarMaintenanceService $carMaintenanceService)
     {
+        try {
+            $carMaintenance = $carMaintenanceService->edit($id);
+            return view('carMaintenance.edit', ['carMaintenance' => $carMaintenance]);
+
+       } catch (Exception $e) {
+           return redirect()->route('home')->with('msg2', 'Manutenção não encontrado!');
+       }
 
     }
-    public function edit($id)
+    public function update(Request $request, CarMaintenanceService $carMaintenanceService)
     {
-        $carMaintenance = CarMaintenance::findOrFail($id);
-        return view('carMaintenance.edit', ['carMaintenance' => $carMaintenance]);
+        try {
+            $carMaintenanceService->update($request);
+            return redirect()->route('home')->with('msg', 'Manutenção do carro atualizado com sucesso!');
 
-    }
-    public function update(Request $request)
-    {
-        $data = $request->all();
-        CarMaintenance::findOrFail($request->id)->update($data);
-
-        return redirect()->route('home')->with('msg', 'Manutenção do carro atualizada com sucesso!');
-
+        } catch (Exception $e) {
+            return redirect()->route('home')->with('msg2', 'Falha ao tentar atualizar o carro carro!');
+        }
     }
 
-    public function destroy($id)
+    public function destroy($id , CarMaintenanceService $carMaintenanceService)
     {
-        CarMaintenance::findOrFail($id)->delete();
-        return redirect()->route('home')->with('msg', 'Manutenção do carro deletada com sucesso!');
+        try {
+            $carMaintenanceService->destroy($id);
+            return redirect()->route('home')->with('msg', 'Manutenção do carro deletado com sucesso!');
 
-
+      } catch (Exception $e) {
+          return redirect()->route('home')->with('msg2', 'Falha ao tentar deletar o carro carro!');
+      }   
     }
 }
